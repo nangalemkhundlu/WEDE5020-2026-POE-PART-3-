@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+
     if (searchInput) {
         searchInput.addEventListener('input', (e) => {
             const query = e.target.value.toLowerCase().trim();
@@ -31,6 +32,30 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.style.display = '';
                 } else {
                     card.style.display = 'none';
+                }
+            });
+        });
+    }
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+    const searchInput = document.getElementById("service-search");
+    const serviceCards = document.querySelectorAll(".service-card"); // adjust class if your service cards use a different class name
+
+    if (searchInput) {
+        searchInput.addEventListener("input", function () {
+            const query = searchInput.value.toLowerCase().trim();
+
+            serviceCards.forEach(card => {
+                const title = card.querySelector("h3") ? card.querySelector("h3").textContent.toLowerCase() : "";
+                const description = card.querySelector("p") ? card.querySelector("p").textContent.toLowerCase() : "";
+
+                if (title.includes(query) || description.includes(query)) {
+                    card.style.display = ""; // Show card
+                } else {
+                    card.style.display = "none"; // Hide card
                 }
             });
         });
