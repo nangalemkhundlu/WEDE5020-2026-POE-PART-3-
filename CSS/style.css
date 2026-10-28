@@ -930,3 +930,19 @@ textarea.error {
     background-repeat: no-repeat;
     color: #ffffff;
 }
+
+
+.search-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#service-search {
+    width: 100%;
+    max-width: 500px;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
